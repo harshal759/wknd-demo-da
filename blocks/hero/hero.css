@@ -1,12 +1,9 @@
-/* stylelint-disable no-descending-specificity, no-duplicate-selectors */
-
 /* --------------------------
    Base Hero Layout
 --------------------------- */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
-  width: 100%; 
 }
 
 .hero {
@@ -16,6 +13,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+body.securbank-theme .hero {
+  min-height: 400px;
 }
 
 /* --------------------------
@@ -33,9 +35,32 @@
   margin: 0 auto;
   color: var(--text-light);
   text-align: center;
+}
+.hero h1,
+.hero h2{
   font-family: var(--black-font-family);
+  padding:0;
+}
+body.securbank-theme .hero h1{
+    font-size: 48px !important;
+    line-height: 1.5 !important;
+    font-family:var(--heading-font-family ) !important;
+}
+body.securbank-theme .hero h2{
+    font-size: 39px !important;
+    line-height: 1.5 !important;
 }
 
+body.securbank-theme .hero.image-background-text-left > div{
+  max-width: 800px;
+}
+body.securbank-theme .hero h6, body.securbank-theme .hero p strong {
+    font-size: 48px !important;
+    line-height: 1.5 !important;
+    font-weight: 800 !important;
+    padding: 0;
+    font-family: var(--black-font-family);
+}
 /* Special underline (only for h1 by default) */
 .hero h1::after {
   background-color: var(--main-accent-color);
@@ -55,6 +80,18 @@
 .hero.removeunderline h5::after,
 .hero.removeunderline h6::after {
   display: none;
+}
+
+/* UE Text Color – when set in editor, override all hero text */
+.hero.hero--custom-text-color h1,
+.hero.hero--custom-text-color h2,
+.hero.hero--custom-text-color h3,
+.hero.hero--custom-text-color h4,
+.hero.hero--custom-text-color h5,
+.hero.hero--custom-text-color h6,
+.hero.hero--custom-text-color p,
+.hero.hero--custom-text-color .button-container a {
+  color: var(--hero-text-color);
 }
 
 /* --------------------------
@@ -87,7 +124,7 @@
 
 .hero-wrapper .button-container.cta-button a.button::after {
   content: "\f105";
-  font-family: 'Font Awesome 5 Solid', sans-serif;
+  font-family: 'Font Awesome 5 Solid';
   font-size: 20px;
   margin-left: 8px;
   transition: all 0.3s ease;
@@ -95,10 +132,10 @@
 }
 
 .hero-wrapper .button-container.cta-button a.button:hover {
-  background-color: rgb(255 255 255 / 10%) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
   color: var(--text-light) !important;
   border-color: var(--text-light) !important;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 30%) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
   transform: translateY(-1px);
 }
 
@@ -116,7 +153,7 @@
 
 .hero-wrapper .button-container.cta-button-secondary a.button::after {
   content: "\f105";
-  font-family: 'Font Awesome 5 Solid', sans-serif;
+  font-family: 'Font Awesome 5 Solid';
   font-size: 20px;
   margin-left: 8px;
   transition: all 0.3s ease;
@@ -161,16 +198,13 @@
   flex-direction: row;
   justify-content: flex-start;
 }
-
 .hero.image-right {
   flex-direction: row-reverse;
   justify-content: flex-start;
 }
-
 .hero.image-top {
   flex-direction: column;
 }
-
 .hero.image-bottom {
   flex-direction: column-reverse;
 }
@@ -247,16 +281,14 @@
 picture {
     line-height: 0;
 }
-
 /* Box shadow for layout variations */
 .hero.image-left,
 .hero.image-right,
 .hero.image-top,
 .hero.image-bottom {
-  box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
-
 .hero.image-left h2,
 .hero.image-left h3,
 .hero.image-left h4,
@@ -269,14 +301,12 @@ picture {
 .hero.image-right h5,
 .hero.image-right h6,
 .hero.image-right p {
-  text-align: left;
   margin: 0;
   width: 100%;
   max-width: none;
   color: var(--text-color);
     text-shadow: unset;
 }
-
 .hero.image-left h1,.hero.image-right h1{
   color: var(--text-color);
   text-shadow: unset;
@@ -290,7 +320,7 @@ picture {
 .hero.image-background-text-left h6,
 .hero.image-background-text-left p {
   text-align: left;
-  margin: 0 0 20px;
+  margin: 0 0 20px 0;
   width: 100%;
   max-width: none;
   color: var(--text-light);
@@ -309,7 +339,7 @@ picture {
 .hero.image-background-text-right h6,
 .hero.image-background-text-right p {
   text-align: left;
-  margin: 0 0 20px;
+  margin: 0 0 20px 0;
   width: 100%;
   max-width: none;
   color: var(--text-light);
@@ -333,36 +363,18 @@ picture {
 .hero.image-bottom h4,
 .hero.image-bottom h5,
 .hero.image-bottom h6,
-.hero.image-bottom p {
+.hero.image-bottom p{
   text-align: center;
   max-width: none;
   color: var(--text-color);
-  text-shadow: unset;
+    text-shadow: unset;
 }
-
 /* --------------------------
    Responsive
 --------------------------- */
 @media (width >= 900px) {
   .hero { padding: 40px 32px; }
   .hero-wrapper a.button { padding: 14px 28px; font-size: 18px; }
-}
-
-@media (width < 1024px) {
-  .hero { min-height: 650px; }
-  
-  .hero.image-background-text-left {
-    padding: 50px 30px;
-  }
-  
-  .hero.image-background-text-right {
-    padding: 50px 30px;
-  }
-
-  .hero-wrapper a.button {
-    padding: 14px 28px;
-    font-size: 18px;
-  }
 }
 
 @media (width < 1024px) {
@@ -509,12 +521,153 @@ picture {
   padding: 20px;
   background: rgb(0 0 0 / 50%);
 }
+.hero.image-background-text-left div:nth-child(2){
+   margin-left: 15%; 
+}
+.hero.image-background-text-right div:nth-child(2){
+  margin-right: 15%;
+}
 
-/* button theme hero specific */
+.hero.block.overlay.hero--text-overlay-off div:nth-child(2),
+.hero.image-background-text-left.hero--text-overlay-off div:nth-child(2),
+.hero.image-background-text-right.hero--text-overlay-off div:nth-child(2) {
+  background: transparent;
+}
+
+.hero.block.overlay.hero--text-overlay-off picture,
+.hero.image-background-text-left.hero--text-overlay-off picture,
+.hero.image-background-text-right.hero--text-overlay-off picture {
+  filter: brightness(.65);
+}
+
+.hero.image-background-text-left div:nth-child(2){
+   margin-left: 15%; 
+}
+.hero.image-background-text-right div:nth-child(2){
+  margin-right: 15%;
+}
+
+/*button theme hero specific*/
 .hero.block.overlay .button-container.cta-link a.button,.hero.image-background-text-left .button-container.cta-link a.button,.hero.image-background-text-right .button-container.cta-link a.button {
   color: var(--text-light);
 }
 
 .hero.block.overlay .button-container.cta-link a.button::after  ,.hero.image-background-text-left .button-container.cta-link a.button::after,.hero.image-background-text-right .button-container.cta-link a.button::after  {
   color: var(--text-light);
+}
+
+/* --------------------------
+   Banner-like: Alignment, vertical alignment, full width
+   (UE Text options: alignment, vertical alignment, height, text color)
+--------------------------- */
+
+/* Alignment (horizontal) – whole text section */
+.hero.hero--alignment-left,
+.hero.hero--alignment-left h1,
+.hero.hero--alignment-left h2,
+.hero.hero--alignment-left h3,
+.hero.hero--alignment-left h4,
+.hero.hero--alignment-left h5,
+.hero.hero--alignment-left h6,
+.hero.hero--alignment-left p {
+  text-align: left;
+}
+
+.hero.hero--alignment-left .button-container {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.hero.hero--alignment-center,
+.hero.hero--alignment-center h1,
+.hero.hero--alignment-center h2,
+.hero.hero--alignment-center h3,
+.hero.hero--alignment-center h4,
+.hero.hero--alignment-center h5,
+.hero.hero--alignment-center h6,
+.hero.hero--alignment-center p {
+  text-align: center;
+}
+
+.hero.hero--alignment-center .button-container {
+  justify-content: center;
+  text-align: center;
+}
+
+.hero.hero--alignment-right,
+.hero.hero--alignment-right h1,
+.hero.hero--alignment-right h2,
+.hero.hero--alignment-right h3,
+.hero.hero--alignment-right h4,
+.hero.hero--alignment-right h5,
+.hero.hero--alignment-right h6,
+.hero.hero--alignment-right p {
+  text-align: right;
+}
+
+.hero.hero--alignment-right .button-container {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Vertical alignment – whole text section within hero */
+.hero.hero--verticalalignment-top {
+  align-items: flex-start;
+}
+
+.hero.hero--verticalalignment-middle {
+  align-items: center;
+}
+
+.hero.hero--verticalalignment-bottom {
+  align-items: flex-end;
+}
+
+/* Full width */
+.hero.hero--fullwidth {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* Hide new button/CTA and UE Text style fields so they don't appear in HTML */
+.hero [data-aue-prop="eventType"],
+.hero [data-aue-prop="webhookUrl"],
+.hero [data-aue-prop="formId"],
+.hero [data-aue-prop="data"],
+.hero [data-aue-prop="alignment"],
+.hero [data-aue-prop="verticalalignment"],
+.hero [data-aue-prop="height"],
+.hero [data-aue-prop="color"],
+.hero [data-aue-prop="isfullwidth"],
+.hero [data-aue-prop="textUppercase"],
+.hero [data-aue-prop="backgroundcolor"],
+.hero [data-aue-prop="backgroundColor"],
+.hero [data-aue-prop="backgroundColorOnHover"],
+.hero [data-aue-prop="textColor"],
+.hero [data-aue-prop="textColorOnHover"],
+.hero [data-aue-prop="borderColor"],
+.hero [data-aue-prop="borderColorOnHover"],
+.hero [data-aue-prop="borderWidth"],
+.hero [data-aue-prop="customStyles"],
+.hero [data-aue-prop="textoverlay"] {
+  display: none !important;
+}
+.hero div:has(> [data-aue-prop="eventType"]),
+.hero div:has(> [data-aue-prop="webhookUrl"]),
+.hero div:has(> [data-aue-prop="formId"]),
+.hero div:has(> [data-aue-prop="data"]),
+.hero div:has(> [data-aue-prop="alignment"]),
+.hero div:has(> [data-aue-prop="verticalalignment"]),
+.hero div:has(> [data-aue-prop="height"]),
+.hero div:has(> [data-aue-prop="color"]),
+.hero div:has(> [data-aue-prop="isfullwidth"]),
+.hero div:has(> [data-aue-prop="backgroundcolor"]),
+.hero div:has(> [data-aue-prop="customStyles"]),
+.hero div:has(> [data-aue-prop="textoverlay"]) {
+  display: none !important;
 }
