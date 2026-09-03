@@ -256,7 +256,7 @@
           "model": "hero",
           "plugins": {
             "da": {
-              "rows": 1,
+              "rows": 6,
               "columns": 1,
               "fields": [
                 {
@@ -270,6 +270,22 @@
                 {
                   "name": "text",
                   "selector": "div:nth-child(2)>div"
+                },
+                {
+                  "name": "underline",
+                  "selector": "div:nth-child(3)>div"
+                },
+                {
+                  "name": "layoutStyle",
+                  "selector": "div:nth-child(4)>div"
+                },
+                {
+                  "name": "ctaStyle",
+                  "selector": "div:nth-child(5)>div"
+                },
+                {
+                  "name": "backgroundStyle",
+                  "selector": "div:nth-child(6)>div"
                 }
               ]
             }
