@@ -23,6 +23,21 @@
           "name": "robots",
           "label": "Robots",
           "description": "Index control via robots"
+        },
+        {
+          "component": "select",
+          "name": "theme",
+          "label": "Theme",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Luma Theme",
+              "value": "luma-theme"
+            }
+          ]
         }
       ]
     }
