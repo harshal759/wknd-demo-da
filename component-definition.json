@@ -273,19 +273,19 @@
                 },
                 {
                   "name": "underline",
-                  "selector": "div:nth-child(3)>div"
+                  "selector": "div:nth-child(3)>div>p"
                 },
                 {
                   "name": "layoutStyle",
-                  "selector": "div:nth-child(4)>div"
+                  "selector": "div:nth-child(4)>div>p"
                 },
                 {
                   "name": "ctaStyle",
-                  "selector": "div:nth-child(5)>div"
+                  "selector": "div:nth-child(5)>div>p"
                 },
                 {
                   "name": "backgroundStyle",
-                  "selector": "div:nth-child(6)>div"
+                  "selector": "div:nth-child(6)>div>p"
                 }
               ]
             }

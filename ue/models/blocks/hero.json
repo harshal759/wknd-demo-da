@@ -12,10 +12,10 @@
             { "name": "image", "selector": "div:nth-child(1)>div>picture>img[src]" },
             { "name": "alt", "selector": "div:nth-child(1)>div>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)>div" },
-            { "name": "underline", "selector": "div:nth-child(3)>div" },
-            { "name": "layoutStyle", "selector": "div:nth-child(4)>div" },
-            { "name": "ctaStyle", "selector": "div:nth-child(5)>div" },
-            { "name": "backgroundStyle", "selector": "div:nth-child(6)>div" }
+            { "name": "underline", "selector": "div:nth-child(3)>div>p" },
+            { "name": "layoutStyle", "selector": "div:nth-child(4)>div>p" },
+            { "name": "ctaStyle", "selector": "div:nth-child(5)>div>p" },
+            { "name": "backgroundStyle", "selector": "div:nth-child(6)>div>p" }
           ]
         }
       }
